@@ -1,0 +1,26 @@
+{
+  "name": "airquality",
+  "version": "1.0.0",
+  "description": "air quality application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MSFalconer/AirQualityApp.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "matthew falconer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSFalconer/AirQualityApp/issues"
+  },
+  "homepage": "https://github.com/MSFalconer/AirQualityApp#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "webpack": "^4.35.2"
+  }
+}
