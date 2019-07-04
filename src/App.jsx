@@ -29,7 +29,6 @@ class App extends Component {
   render() {
     const { data } = this.state;
 
-    const AppStyle = {};
     return (
       <div className="App">
         <h1>Compare your air</h1>

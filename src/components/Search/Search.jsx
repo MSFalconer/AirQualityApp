@@ -26,3 +26,5 @@ class Search extends Component {
 }
 
 export default Search;
+
+//https://api.openaq.org/v1/latest?country=GB&city=Stoke-on-Trent
