@@ -1,0 +1,17 @@
+.App {
+}
+
+.App h1,
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.App h1 {
+  font-size: 1.8rem;
+}
+
+.App h2 {
+  font-weight: 100;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,11 @@
+.Search {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.Search__Input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 6px 0;
+}
