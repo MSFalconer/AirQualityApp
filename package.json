@@ -1,26 +1,35 @@
 {
   "name": "airquality",
   "version": "1.0.0",
-  "description": "air quality application",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MSFalconer/AirQualityApp.git"
+    "url": "git+https://github.com/MSFalconer/AirQualityApp.git"
   },
-  "keywords": [
-    "react"
-  ],
   "author": "matthew falconer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MSFalconer/AirQualityApp/issues"
   },
   "homepage": "https://github.com/MSFalconer/AirQualityApp#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^16.8.6",
-    "webpack": "^4.35.2"
+    "react-dom": "^16.8.6",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
