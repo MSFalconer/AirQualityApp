@@ -23,8 +23,8 @@ class Search extends Component {
     const textSlice = text.slice(value.length);
     return (
       <>
-        <b>{sub}</b>
-        {strSlice}
+        <b>{textSub}</b>
+        {textSlice}
       </>
     );
   }
