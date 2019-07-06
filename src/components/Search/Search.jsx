@@ -9,11 +9,19 @@ class Search extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClicker = this.handleClick.bind(this);
   }
 
   // on change event to capture input value and set state
   handleChange(event) {
     this.setState({ value: event.target.value.toLowerCase() });
+  }
+
+  handleClick(city) {
+    this.props.requestCityData(city);
+    this.setState({
+      value: ""
+    });
   }
 
   // highlight input value
@@ -28,9 +36,10 @@ class Search extends Component {
       </>
     );
   }
+
   render() {
     const { value } = this.state;
-    const { data, handleClick } = this.props;
+    const { data } = this.props;
 
     return (
       <div className="Search">
@@ -42,25 +51,27 @@ class Search extends Component {
           placeholder="Enter city name..."
         />
 
-        <div className="Search__Results">
-          <ul>
-            {value &&
-              data
-                .filter(item => {
-                  return item.city.toLowerCase().startsWith(value);
-                })
-                .map((item, i) => {
-                  return (
-                    <li
-                      key={item.city.replace(/\s/, "")}
-                      onClick={() => handleClick(event, item.city)}
-                    >
-                      {this.highlighter(item.city)}
-                    </li>
-                  );
-                })}
-          </ul>
-        </div>
+        {value && (
+          <div className="Search__Results">
+            <ul>
+              {value &&
+                data
+                  .filter(item => {
+                    return item.city.toLowerCase().startsWith(value);
+                  })
+                  .map((item, i) => {
+                    return (
+                      <li
+                        key={item.city.replace(/\s/, "")}
+                        onClick={() => this.handleClick(item.city)}
+                      >
+                        {this.highlighter(item.city)}
+                      </li>
+                    );
+                  })}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }

@@ -8,15 +8,14 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      cardsActive: false
+      cardsActive: false,
+      locations: []
     };
-    this.handleClick = this.handleClick.bind(this);
-
-    this.locations = [];
+    this.requestCityData = this.requestCityData.bind(this);
+    this.removeCard = this.removeCard.bind(this);
   }
 
   // fetch UK cities data from api
-  // TO DO: current city count only 100 - check if there is more
   componentWillMount() {
     // normal limit of request is set to 100 - checked the max number of returned citys - ammened limit to 112;
     fetch("https://api.openaq.org/v1/cities?country=GB&limit=112")
@@ -47,18 +46,18 @@ class App extends Component {
         return response.json();
       })
       .then(response => {
-        const results = response.results;
+        const locations = this.state.locations;
+        const results = response.results.reverse();
         results.forEach(item => {
-          const found = this.locations.some(
-            obj => obj.location === item.location
-          );
+          const found = locations.some(obj => obj.location === item.location);
           if (!found) {
-            this.locations.unshift(item);
+            locations.unshift(item);
           }
         });
 
         this.setState({
-          cardsActive: true
+          cardsActive: true,
+          locations: locations
         });
       })
       .catch(error => {
@@ -66,26 +65,41 @@ class App extends Component {
       });
   }
 
-  // on click request city data
-  handleClick(event, city) {
-    this.requestCityData(city);
+  // remove card from array
+  removeCard(location) {
+    // filter locations array
+    let newArr = this.state.locations.filter(
+      item => item.location !== location
+    );
+    this.setState({
+      locations: newArr
+    });
   }
 
   render() {
-    const { data } = this.state;
+    const { data, locations } = this.state;
+
     return (
       <div className="App">
         <h1>Compare your air</h1>
-        <h2>
-          Compare the air quality between cities in the UK. Select cities to
-          compare using the search tool below.
-        </h2>
-        <Search data={data} handleClick={this.handleClick} />
+        <h2>Compare the air quality between cities in the UK.</h2>
+        <h2>Select cities to compare using the search tool below.</h2>
+        <div className="Container">
+          <Search data={data} requestCityData={this.requestCityData} />
+        </div>
 
-        {this.locations &&
-          this.locations.map((item, i) => {
-            return <Card {...item} />;
-          })}
+        <div className="Container">
+          {locations &&
+            locations.map((item, i) => {
+              return (
+                <Card
+                  key={item.location.replace(/\s/, "")}
+                  {...item}
+                  removeCard={this.removeCard}
+                />
+              );
+            })}
+        </div>
       </div>
     );
   }
