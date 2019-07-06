@@ -28,6 +28,7 @@ class App extends Component {
         this.setState({
           data: response.results
         });
+        console.log(response.results);
       })
       .catch(error => {
         console.log(error);
@@ -36,9 +37,10 @@ class App extends Component {
 
   // request location air results
   requestCityData(city) {
-    const amCity = city.replace(/\s/, "-");
+    const amCity = city.replace(/\s/, "+").replace(/&/, "%26");
     const api = "https://api.openaq.org/v1/latest?country=GB&city=";
     const locationUrl = api + amCity;
+    console.log(locationUrl);
 
     fetch(locationUrl)
       .then(response => {
