@@ -51,7 +51,10 @@ class Search extends Component {
                 })
                 .map((item, i) => {
                   return (
-                    <li key={item.city.replace(/\s/, "")} onClick={handleClick}>
+                    <li
+                      key={item.city.replace(/\s/, "")}
+                      onClick={() => handleClick(event, item.city)}
+                    >
                       {this.highlighter(item.city)}
                     </li>
                   );
@@ -64,5 +67,3 @@ class Search extends Component {
 }
 
 export default Search;
-
-//https://api.openaq.org/v1/latest?country=GB&city=Stoke-on-Trent
