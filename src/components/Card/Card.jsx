@@ -63,9 +63,7 @@ class Card extends Component {
         <span
           className="Card__Close"
           onClick={() => this.handleClick(location)}
-        >
-          X
-        </span>
+        />
         <span className="Card__Time">
           {this.readableDate(this.props.measurements[0].lastUpdated)}
         </span>

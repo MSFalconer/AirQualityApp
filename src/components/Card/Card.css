@@ -6,12 +6,32 @@
   padding: 1rem;
   position: relative;
 }
-
+.Card__Time {
+  text-transform: uppercase;
+}
 .Card__Close {
   padding: 0.5rem 1rem;
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.Card__Close:before,
+.Card__Close:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  background-color: black;
+  height: 20px;
+  top: 10px;
+  right: 20px;
+}
+.Card__Close:before {
+  transform: rotate(45deg);
+}
+.Card__Close:after {
+  transform: rotate(315deg);
 }
 
 .Card__Location {
