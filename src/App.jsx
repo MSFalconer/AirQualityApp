@@ -8,15 +8,20 @@ class App extends Component {
     this.state = {
       data: []
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  // fetch UK cities data from api
+  // TO DO: current city count only 100 - check if there is more
   componentWillMount() {
     fetch("https://api.openaq.org/v1/cities?country=GB")
       .then(response => {
+        // return response as json
         return response.json();
       })
       .then(response => {
-        console.log(response.results);
+        // set state as response results
         this.setState({
           data: response.results
         });
@@ -24,6 +29,11 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
+  }
+
+  // on click request city data
+  handleClick(event) {
+    console.log(event);
   }
 
   render() {
@@ -36,7 +46,7 @@ class App extends Component {
           Compare the air quality between cities in the UK. Select cities to
           compare using the search tool below.
         </h2>
-        <Search data={data} />
+        <Search data={data} handleClick={this.handleClick} />
       </div>
     );
   }
