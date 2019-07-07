@@ -12,6 +12,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -26,6 +27,15 @@ module.exports = {
             loader: "sass-loader",
             options: {
               implementation: require("sass")
+            }
+          },
+          {
+            loader: "sass-resources-loader",
+            options: {
+              resources: [
+                "./src/style/variables/*.scss",
+                "./src/style/mixins/*.scss"
+              ]
             }
           }
         ]

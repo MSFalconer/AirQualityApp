@@ -9,6 +9,10 @@
   h1 {
     font-size: 1.8rem;
     font-weight: 600;
+
+    @include respond-to-min($desktop) {
+      font-size: 2.8em;
+    }
   }
 
   h2 {
@@ -16,5 +20,10 @@
     font-weight: 100;
     margin: 0.5rem auto;
     width: 80%;
+
+    @include respond-to-min($desktop) {
+      font-size: 1.8rem;
+      width: 100%;
+    }
   }
 }

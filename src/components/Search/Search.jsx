@@ -41,6 +41,10 @@ class Search extends Component {
     const { value } = this.state;
     const { data } = this.props;
 
+    let valueCheck = data.some(item =>
+      item.city.toLowerCase().startsWith(value)
+    );
+
     return (
       <div className="Search">
         <input
@@ -54,7 +58,8 @@ class Search extends Component {
         {value && (
           <div className="Search__Results">
             <ul>
-              {value &&
+              {valueCheck ? (
+                value &&
                 data
                   .filter(item => {
                     return item.city.toLowerCase().startsWith(value);
@@ -68,7 +73,13 @@ class Search extends Component {
                         {this.highlighter(item.city)}
                       </li>
                     );
-                  })}
+                  })
+              ) : (
+                <li>
+                  Sorry, we can't find any city in the UK that matches your
+                  search
+                </li>
+              )}
             </ul>
           </div>
         )}

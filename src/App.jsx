@@ -37,10 +37,10 @@ class App extends Component {
 
   // request location air results
   requestCityData(city) {
+    //clean city string so it can be used within api call
     const amCity = city.replace(/\s/, "+").replace(/&/, "%26");
     const api = "https://api.openaq.org/v1/latest?country=GB&city=";
     const locationUrl = api + amCity;
-    console.log(locationUrl);
 
     fetch(locationUrl)
       .then(response => {
@@ -86,11 +86,11 @@ class App extends Component {
         <h1>Compare your air</h1>
         <h2>Compare the air quality between cities in the UK.</h2>
         <h2>Select cities to compare using the search tool below.</h2>
-        <div className="Container">
+        <div className="Search__Container Container">
           <Search data={data} requestCityData={this.requestCityData} />
         </div>
 
-        <div className="Container">
+        <div className="Card__Container Container">
           {locations &&
             locations.map((item, i) => {
               return (
