@@ -17,6 +17,7 @@ class Card extends Component {
     const lastUpdated = new Date(date);
     const today = new Date();
     const dateDifference = today.getTime() - lastUpdated.getTime();
+    console.log(lastUpdated, today);
 
     const oneHour = 1000 * 60 * 60;
     const backToHours = Math.round(dateDifference / oneHour);
@@ -69,12 +70,12 @@ class Card extends Component {
         </span>
         <h3 className="Card__Location"> {location} </h3>
         <p className="Card__City">{`in ${city}, United Kingdom`}</p>
-        <b className="Card__Measurements">
+        <p className="Card__Measurements">
           Values:
           {measurements.map((item, i) => {
             return ` ${item.parameter.toUpperCase()}: ${item.value}, `;
           })}
-        </b>
+        </p>
       </div>
     );
   }

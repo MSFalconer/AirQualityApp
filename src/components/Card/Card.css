@@ -1,31 +1,34 @@
 .Card {
   background-color: #fff;
   border-radius: 10px;
-  margin: 1rem auto;
-  max-width: 280px;
-  padding: 1rem;
+  margin: 1.4rem auto;
+  padding: 1.4rem;
   position: relative;
 }
 .Card__Time {
+  font-size: 0.9rem;
+  font-weight: 600;
   text-transform: uppercase;
 }
 .Card__Close {
-  padding: 0.5rem 1rem;
+  cursor: pointer;
+  height: 48px;
   position: absolute;
   right: 0;
   top: 0;
+  width: 48px;
 }
 
 .Card__Close:before,
 .Card__Close:after {
+  background-color: #000;
   content: "";
   display: block;
+  height: 25px;
   position: absolute;
-  width: 2px;
-  background-color: black;
-  height: 20px;
-  top: 10px;
-  right: 20px;
+  right: 25px;
+  top: 15px;
+  width: 3px;
 }
 .Card__Close:before {
   transform: rotate(45deg);
@@ -35,5 +38,19 @@
 }
 
 .Card__Location {
+  margin: 0.5rem 0;
   color: #434dcf;
+  font-size: 1.3rem;
+}
+
+.Card__City {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  width: 75%;
+}
+
+.Card__Measurements {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5em 0;
 }
