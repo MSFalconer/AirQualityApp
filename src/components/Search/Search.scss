@@ -72,7 +72,22 @@
 
       &:hover {
         background-color: #f0ebeb;
+
+        &.Search__NoResults {
+          background-color: inherit;
+          cursor: inherit;
+        }
       }
     }
+  }
+
+  &__Clear {
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 1px solid #4f5dd0;
+    color: #4f5dd0;
+    display: block;
+    float: right;
+    padding: 1.6em 0 0 0;
   }
 }

@@ -18,7 +18,9 @@ class Search extends Component {
   }
 
   handleClick(city) {
-    this.props.requestCityData(city);
+    if (city) {
+      this.props.requestCityData(city);
+    }
     this.setState({
       value: ""
     });
@@ -75,9 +77,15 @@ class Search extends Component {
                     );
                   })
               ) : (
-                <li>
+                <li class="Search__NoResults">
                   Sorry, we can't find any city in the UK that matches your
                   search
+                  <span
+                    className="Search__Clear"
+                    onClick={() => this.handleClick()}
+                  >
+                    clear
+                  </span>
                 </li>
               )}
             </ul>
