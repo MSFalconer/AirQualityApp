@@ -1,0 +1,60 @@
+.Search {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  &__Input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.24 30.24'%3E%3Ctitle%3Emagnifying-glass%3C/title%3E%3Cpath d='M20.19,3.46a11.83,11.83,0,1,0-1.61,18.07,2.51,2.51,0,0,0,.67,1.26L26,29.51A2.5,2.5,0,1,0,29.51,26l-6.72-6.72a2.59,2.59,0,0,0-1.26-.67A11.84,11.84,0,0,0,20.19,3.46ZM18.07,18.07a8.83,8.83,0,1,1,0-12.49A8.83,8.83,0,0,1,18.07,18.07Z' transform='translate(0 0)' fill='%23d3d3d3'/%3E%3C/svg%3E");
+    background-position: 1rem 0.8rem;
+    background-repeat: no-repeat;
+    background-size: 1.3em;
+    border-radius: 15px;
+    border: 2px solid lightgrey;
+    font-size: 1.1rem;
+    height: 48px;
+    padding: 0;
+    position: relative;
+    text-indent: 3.2rem;
+    width: 100%;
+    z-index: 10;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__Results {
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+    bottom: 1rem;
+    left: 2px;
+    padding: 1rem 0rem 0.5rem 0;
+    position: relative;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      max-height: 180px;
+      overflow: auto;
+      padding: 0;
+
+      ::-webkit-scrollbar {
+        width: 0.5em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #d3d3d3;
+        border-radius: 15px;
+        outline: 1px solid #d3d3d3;
+      }
+    }
+
+    li {
+      padding: 0.6rem 1rem;
+
+      &:hover {
+        background-color: #f0ebeb;
+      }
+    }
+  }
+}

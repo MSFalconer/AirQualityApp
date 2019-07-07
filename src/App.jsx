@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Search from "./components/Search/Search.jsx";
 import Card from "./components/Card/Card.jsx";
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   constructor(props) {
