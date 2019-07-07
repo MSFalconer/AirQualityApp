@@ -14,13 +14,15 @@ class Search extends Component {
 
   // on change event to capture input value and set state
   handleChange(event) {
-    this.setState({ value: event.target.value.toLowerCase() });
+    this.setState({ value: event.target.value });
   }
 
   handleClick(city) {
+    // if city is true run request
     if (city) {
       this.props.requestCityData(city);
     }
+    // reset search
     this.setState({
       value: ""
     });
@@ -44,7 +46,7 @@ class Search extends Component {
     const { data } = this.props;
 
     let valueCheck = data.some(item =>
-      item.city.toLowerCase().startsWith(value)
+      item.city.toLowerCase().startsWith(value.toLowerCase())
     );
 
     return (
@@ -64,7 +66,9 @@ class Search extends Component {
                 value &&
                 data
                   .filter(item => {
-                    return item.city.toLowerCase().startsWith(value);
+                    return item.city
+                      .toLowerCase()
+                      .startsWith(value.toLowerCase());
                   })
                   .map((item, i) => {
                     return (

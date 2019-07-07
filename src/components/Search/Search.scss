@@ -3,7 +3,7 @@
   margin: 0 auto;
   width: 100%;
 
-  @include respond-to-min($desktop) {
+  @include respond-to-min($tablet) {
     max-width: 500px;
   }
 
@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: 1.3em;
     border-radius: 15px;
-    border: 3px solid #d3d3d3;
+    border: 3px solid $c-lightgrey;
     font-size: 1.1rem;
     font-weight: 300;
     height: 50px;
@@ -23,7 +23,7 @@
     width: 100%;
     z-index: 10;
 
-    @include respond-to-min($desktop) {
+    @include respond-to-min($tablet) {
       background-position: 1rem 0.6rem;
       background-size: 1.3em;
       font-size: 1.4rem;
@@ -37,8 +37,8 @@
 
   &__Results {
     width: 100%;
-    border: 3px solid #fff;
-    background-color: #fff;
+    border: 3px solid $c-white;
+    background-color: $c-white;
     border-radius: 0 0 15px 15px;
     bottom: 1rem;
     padding: 1rem 0rem 0.5rem 0;
@@ -56,9 +56,9 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: #d3d3d3;
+        background-color: $c-lightgrey;
         border-radius: 15px;
-        outline: 1px solid #d3d3d3;
+        outline: 1px solid $c-lightgrey;
       }
     }
 
@@ -66,12 +66,12 @@
       cursor: pointer;
       padding: 0.6rem 1rem;
 
-      @include respond-to-min($desktop) {
+      @include respond-to-min($tablet) {
         font-size: 1.2em;
       }
 
       &:hover {
-        background-color: #f0ebeb;
+        background-color: $c-lightgrey-hover;
 
         &.Search__NoResults {
           background-color: inherit;
@@ -84,8 +84,8 @@
   &__Clear {
     cursor: pointer;
     font-size: 1rem;
-    border-bottom: 1px solid #4f5dd0;
-    color: #4f5dd0;
+    border-bottom: 1px solid $c-blue;
+    color: $c-blue;
     display: block;
     float: right;
     padding: 1.6em 0 0 0;

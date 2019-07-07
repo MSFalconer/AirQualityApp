@@ -15,7 +15,7 @@ body {
 .Container {
   margin: 3rem auto;
 
-  @include respond-to-max($desktop) {
+  @include respond-to-max($tablet) {
     max-width: 90%;
   }
 }

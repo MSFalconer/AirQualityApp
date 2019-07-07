@@ -1,12 +1,12 @@
 .Card {
-  background-color: #fff;
+  background-color: $c-white;
   border-radius: 10px;
   margin: 1.4rem auto;
   padding: 1.4rem;
   position: relative;
   animation: $an-entrance;
 
-  @include respond-to-min($desktop) {
+  @include respond-to-min($tablet) {
     display: inline-block;
     margin: 1.6rem;
     width: calc(50% - (2.8rem + 3.2rem));
@@ -14,7 +14,7 @@
   }
 
   &__Container {
-    @include respond-to-min($desktop) {
+    @include respond-to-min($tablet) {
       max-width: 1024px;
     }
   }
@@ -29,7 +29,7 @@
 
     &:before,
     &:after {
-      background-color: #000;
+      background-color: $c-black;
       content: "";
       display: block;
       height: 25px;
@@ -55,10 +55,10 @@
 
   &__Location {
     margin: 0.5rem 0;
-    color: #434dcf;
+    color: $c-blue;
     font-size: 1.3rem;
 
-    @include respond-to-min($desktop) {
+    @include respond-to-min($tablet) {
       font-size: 1.5rem;
       margin: 0.25em 0 0.5em 0;
     }
